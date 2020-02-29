@@ -1,4 +1,4 @@
-# work-one
+# work_one
 
 ## Project setup
 ```

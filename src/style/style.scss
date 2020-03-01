@@ -2,3 +2,40 @@
 html, body {
     height: 100%;
 }
+
+// 所有input去除outline
+input {
+    outline: none;
+    &:active, &:focus {
+        outline: none;
+    }
+}
+
+// 文字溢出处理
+.text-hidden {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+// UI层级权限设置
+.zIndex-9 {
+    z-index: 9;
+}
+
+// 打开面板特效
+.open-panel {
+    transform-origin: right center;
+    animation: moveX .7s;
+}
+@keyframes moveX {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(5%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

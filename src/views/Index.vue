@@ -1,18 +1,11 @@
 <template>
-	<div class="h-full flex j-center a-center"> 
-		<Button type="info">sigi</Button>
-		<Button type="success">Success</Button>
-		<Button type="warning">Warning</Button>
-		<Button type="error">Error</Button>
-	</div>
+    <div>
+    <h1>登录</h1>
+      <router-view to="/signin">登录</router-view>
+    </div>
 </template>
-
 <script>
     export default {
         
     }
 </script>
-
-<style lang="scss"scoped>
-    
-</style>

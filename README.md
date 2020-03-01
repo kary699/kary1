@@ -1,19 +1,35 @@
-# work_one
+# 登录注册部分
 
-## Project setup
+## 介绍
+---
+> 技术选用
+
+> * vue
+> * vue-router
+> * view-design
+> * sass
+> * axios
+> * quickly-css
+
+## 使用
+---
+
+克隆本地：
 ```
-npm install
+git clone git@github.com:kary699/kary1.git
 ```
 
-### Compiles and hot-reloads for development
+安装依赖：
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+npm/cnpm install
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+运行：
+```
+npm/cnpm run serve
+```
+
+打包：
+```
+npm/cnpm run build
+```

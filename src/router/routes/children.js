@@ -1,4 +1,4 @@
-const Index = () => import('@/views/Index.vue')
+const Index = () => import('@/views/Index/Index.vue')
 
 export default [
     {

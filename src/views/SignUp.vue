@@ -1,6 +1,6 @@
 <template>
-	<div class="max-w-1200 w-full h-full m-h-100 flex j-between a-center">
-		<div style="w-600 h-full flex j-center a-center">	
+	<div class="max-w-1200 w-full h-full m-h-30 flex j-between a-center">
+		<div class="w-600 h-full flex j-center p-v-80">	
 			<Form ref='form' :model="form" :rules="rules" class='max-w-300 w-full'>	
 				<h1 class="text-center text-main-black "> Sign Up</h1>
                 <FormItem prop="number">
@@ -20,21 +20,42 @@
                 </FormItem>
 				<FormItem prop="proof">
                   <Input   
-					placeholder="请输入验证码" class=" w-120"/> 
-					<Button type="primary" ghost class='p-h-20'>发送验证码</Button>
+					placeholder="请输入验证码" class=" w-150"/> 
+					<Button type="primary" ghost class='p-h-20 m-h-15'>发送验证码</Button>
                 </FormItem>
-
 				<FormItem>
-					<Button type="primary" ghost class="w-full bg-main text-main-yellow" size="large">submit</Button>
+					<Button type="primary" ghost class="w-full bg-main text-main-yellow"
+                     size="large" @click="show()">submit</Button>
 				</FormItem>
+                <div v-show="ishidden">   
+                    <FormItem prop="password">
+                    <Input prefix="ios-unlock-outline" 
+                        size="large"
+                        type="password"
+                        password
+                        @keyup.enter.native="submit()"
+                        placeholder="请输入密码"
+                        v-model="form.password"/>
+                   </FormItem>
+                    <FormItem prop="repassword">
+                    <Input prefix="ios-unlock-outline" 
+                        size="large"
+                        type="password"
+                        password
+                        @keyup.enter.native="submit()"
+                        placeholder="确认密码"
+                        v-model="form.password"/>
+                   </FormItem>
+                </div>
 				<div>
 					<router-link to="/signin" class="fs-13 m-r-20">
 					  <Button type="primary" class="w-full bg-main text-main-yellow" size="large"
-					 @click="submit()">sign in</Button>
+					 @click="judge()">sign in</Button>
 					</router-link>
 				</div>
 			</Form>
 		</div>
+        
         
 		<div class="max-w-800 w-600 h-600 m-h-80 signup"></div>
 	</div>
@@ -43,10 +64,13 @@
 export default {
     data() {
         return {
+            ishidden:'true',
             form: {
                 number: '',
 				phonenumber: '',
-				proof: ''
+				proof: '',
+                password:'',
+                repassword:''
             },
             rules: {
                 number: [
@@ -55,7 +79,15 @@ export default {
                 ],
                 phonenumber: [
                     { required: true, message: '手机号码不能为空', trigger: 'blur' },
-                    { type: 'string', min: 11, message: ' ', trigger: 'blur' }
+                    { type: 'string', min: 11, message: '请确认手机号 ', trigger: 'blur' }
+                ],
+                 password: [
+                    { required: true, message: '密码不能为空', trigger: 'blur' },
+                    { type: 'string', min: 6, message: '密码不得少于6位', trigger: 'blur' }
+                ],
+                proof: [
+                    { required: true, message: '验证码不能为空', trigger: 'blur' },
+                    { type: 'string', min: 6, message: '', trigger: 'blur' }
                 ]
             }
         }
@@ -72,6 +104,13 @@ export default {
             // this.$refs.form.resetFields()
             // this.$Message.success(message)
             this.$router.push('/')
+        },
+         show(){
+            this.ishidden=false
+        },
+        judge(){
+            let {number,phonenumber,proof,password} = this.form
+            if (password!==repassword) return this.$Message.warning('请确认密码')
         }
     }
 }

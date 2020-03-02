@@ -1,6 +1,6 @@
 <template>
-	<div class="max-w-1200 w-full h-full m-h-30 flex j-between a-center">
-		<div class="w-600 h-full flex j-center p-v-80">	
+	<div class="max-w-1200 w-full h-full flex j-between a-center m-auto p-h-50">
+		<div class="w-400 h-full flex j-center p-v-80">	
 			<Form ref='form' :model="form" :rules="rules" class='max-w-300 w-full'>	
 				<h1 class="text-center text-main-black "> Sign Up</h1>
                 <FormItem prop="number">
@@ -19,43 +19,49 @@
                         v-model="form.phonenumber"/>
                 </FormItem>
 				<FormItem prop="proof">
-                   <Input   
-					placeholder="请输入验证码" class=" w-150"/> 
-					<Button type="primary" ghost class='p-h-20 m-h-15'>发送验证码</Button>
+                   <div class="flex j-between a-center">
+                       <Input placeholder="请输入验证码" 
+                              class=" w-150"/> 
+					    <Button type="primary" ghost class='p-h-20 m-h-15'>发送验证码</Button>
+                   </div>
                 </FormItem>
 				<FormItem>
 					<Button type="primary" ghost class="w-full bg-main text-main-yellow"
-                     size="large" @click="isShow()">submit</Button>
+                     size="large" @click="isShow()">next</Button>
 				</FormItem>
-                <div v-if="isHidden">   
+                <div v-if="isHidden">
                     <FormItem prop="password">
-                    <Input prefix="ios-unlock-outline" 
-                        size="large"
-                        type="password"
-                        password
-                        @keyup.enter.native="submit()"
-                        placeholder="请输入密码"
-                        v-model="form.password"/>
+                        <Input prefix="ios-unlock-outline" 
+                            size="large"
+                            type="password"
+                            password
+                            @keyup.enter.native="submit()"
+                            placeholder="请输入密码"
+                            v-model="form.password"/>
                     </FormItem>
                     <FormItem prop="repassword">
-                    <Input prefix="ios-unlock-outline" 
-                        size="large"
-                        type="password"
-                        password
-                        @keyup.enter.native="submit()"
-                        placeholder="确认密码"
-                        v-model="form.password"/>
+                        <Input prefix="ios-unlock-outline" 
+                            size="large"
+                            type="password"
+                            password
+                            @keyup.enter.native="submit()"
+                            placeholder="确认密码"
+                            v-model="form.password"/>
                    </FormItem>
+                   <FormItem>
+                        <Button type="primary" 
+                                class="w-full bg-main text-main-yellow" 
+                                size="large" 
+                                @click="isJudge()">Sign up</Button>
+                    </FormItem>
                 </div>
-				<div>
-					<router-link to="/signin" class="fs-13 m-r-20">
-					   <Button type="primary" class="w-full bg-main text-main-yellow" size="large"
-					   @click="isJudge()">sign in</Button>
-					</router-link>
-				</div>
+            <div class="flex j-between">
+                <span></span>
+                <router-link to="/signin" class="fs-13 m-r-20">sign in</router-link>
+            </div>
 			</Form>
 		</div>       
-		<div class="max-w-800 w-600 h-600 m-h-80 signup"></div>
+		<div class="max-w-800 w-full h-full bg-sign"></div>
 	</div>
 </template>
 <script>
@@ -113,10 +119,4 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
-.signup {
-	 background: url(../assets/sign.png) no-repeat;
-	 background-size: cover;      
-}
-</style> >
 

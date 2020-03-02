@@ -1,8 +1,8 @@
 <template>
-    <div class="max-w-1200 w-full h-full m-h-50 flex j-between a-center">
+    <div class="max-w-1200 w-full h-full flex j-between a-center m-auto p-h-50">
         <div class="w-400 h-full flex j-center a-center">
             <Form ref="form" :model="form" :rules="rules" class="max-w-300 w-full">
-                <h1 class="text-center text-main-black m-b-30">Sign In</h1>
+                <h1 class="text-center text-main-black m-0 m-b-30">Sign In</h1>
                 <FormItem prop="username">
                     <Input prefix="ios-contact-outline" 
                         class="border-main"
@@ -24,12 +24,12 @@
                     <Button type="primary" class="w-full bg-main text-main-yellow" size="large" @click="submit()">Sign in</Button>
                 </FormItem>
                 <div class="flex j-between">
-                    <router-link to="/signup" class="fs-13 m-l-20">账号注册</router-link>
-                    <router-link to="/signin" class="fs-13 m-r-20">忘记密码?</router-link>
+                    <router-link to="/signup" class="fs-13 m-l-20">Sign up</router-link>
+                    <router-link to="/signin" class="fs-13 m-r-20">Forget password</router-link>
                 </div>
             </Form>
         </div>
-        <div class="max-w-800 w-full h-full bg-login"></div>
+        <div class="max-w-800 w-full h-full bg-sign"></div>
     </div>
 </template>
 
@@ -69,10 +69,3 @@ export default {
     }
 }
 </script>
-
-<style lang="scss" scoped>
-.bg-login {
-    background: url(../assets/login.jpg) no-repeat;
-    background-size: cover;
-}
-</style>

@@ -23,7 +23,7 @@
             <Button type="primary" 
                     class="w-full bg-main text-main-yellow" 
                     size="large" 
-                    @click="handleStatus(1)">Change</Button>
+                    @click="handleStatus(1)">Submit</Button>
         </FormItem>
         <div class="flex j-between">
             <span></span>

@@ -1,10 +1,8 @@
 import App from '@/App.vue'
 // 404
 import Empty from '@/views/Empty.vue'
-// 登录
-import SignIn from '@/views/SignIn.vue'
-// 注册
-import SignUp from '@/views/SignUp.vue'
+// 登录、注册
+import Sign from '@/views/Sign/Sign.vue'
 
 // 路由
 import Index from './children'
@@ -18,14 +16,9 @@ export default [
         children: Index
     },
     {
-        path: '/signin',
-        name: 'signin',
-        component: SignIn
-    },
-    {
-        path: '/signup',
-        name: 'signup',
-        component: SignUp
+        path: '/sign',
+        name: 'sign',
+        component: Sign
     },
     {
         path: '*',

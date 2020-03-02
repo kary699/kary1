@@ -1,11 +1,15 @@
 <template>
     <div>
-    <h1>登录</h1>
+      <Header/>  登录
       <router-view to="/signin">登录</router-view>
     </div>
 </template>
 <script>
-    export default {
+import Header from './components/Header'
+export default {
+    components: {
+      Header
+    }
         
     }
 </script>

@@ -11,7 +11,7 @@
                         placeholder="请输入学号"
                         v-model="form.number"/>
                 </FormItem>
-				 <FormItem prop="pnonenumber">
+				 <FormItem prop="phonenumber">
                     <Input prefix="ios-call-outline"
                         size="large"
                         @keyup.enter.native="submit()"
@@ -19,15 +19,15 @@
                         v-model="form.phonenumber"/>
                 </FormItem>
 				<FormItem prop="proof">
-                  <Input   
+                   <Input   
 					placeholder="请输入验证码" class=" w-150"/> 
 					<Button type="primary" ghost class='p-h-20 m-h-15'>发送验证码</Button>
                 </FormItem>
 				<FormItem>
 					<Button type="primary" ghost class="w-full bg-main text-main-yellow"
-                     size="large" @click="show()">submit</Button>
+                     size="large" @click="isShow()">submit</Button>
 				</FormItem>
-                <div v-show="ishidden">   
+                <div v-if="isHidden">   
                     <FormItem prop="password">
                     <Input prefix="ios-unlock-outline" 
                         size="large"
@@ -36,7 +36,7 @@
                         @keyup.enter.native="submit()"
                         placeholder="请输入密码"
                         v-model="form.password"/>
-                   </FormItem>
+                    </FormItem>
                     <FormItem prop="repassword">
                     <Input prefix="ios-unlock-outline" 
                         size="large"
@@ -49,14 +49,12 @@
                 </div>
 				<div>
 					<router-link to="/signin" class="fs-13 m-r-20">
-					  <Button type="primary" class="w-full bg-main text-main-yellow" size="large"
-					 @click="judge()">sign in</Button>
+					   <Button type="primary" class="w-full bg-main text-main-yellow" size="large"
+					   @click="isJudge()">sign in</Button>
 					</router-link>
 				</div>
 			</Form>
-		</div>
-        
-        
+		</div>       
 		<div class="max-w-800 w-600 h-600 m-h-80 signup"></div>
 	</div>
 </template>
@@ -64,13 +62,13 @@
 export default {
     data() {
         return {
-            ishidden:'true',
+            isHidden: false,
             form: {
                 number: '',
 				phonenumber: '',
 				proof: '',
-                password:'',
-                repassword:''
+                password: '',
+                repassword: ''
             },
             rules: {
                 number: [
@@ -81,7 +79,7 @@ export default {
                     { required: true, message: '手机号码不能为空', trigger: 'blur' },
                     { type: 'string', min: 11, message: '请确认手机号 ', trigger: 'blur' }
                 ],
-                 password: [
+                password: [
                     { required: true, message: '密码不能为空', trigger: 'blur' },
                     { type: 'string', min: 6, message: '密码不得少于6位', trigger: 'blur' }
                 ],
@@ -105,22 +103,20 @@ export default {
             // this.$Message.success(message)
             this.$router.push('/')
         },
-         show(){
-            this.ishidden=false
+        isShow() {
+            this.isHidden = !this.isHidden
         },
-        judge(){
-            let {number,phonenumber,proof,password} = this.form
-            if (password!==repassword) return this.$Message.warning('请确认密码')
+        isJudge() {
+            let { number, phonenumber, proof, password } = this.form
+            if (password !== repassword) return this.$Message.warning('请确认密码')
         }
     }
 }
 </script>
-<style >
-    .signup{
-		 background: url(../assets/sign.png) no-repeat;
-		 background-size: cover;
-       
-	}
-
-</style>
+<style lang="scss" scoped>
+.signup {
+	 background: url(../assets/sign.png) no-repeat;
+	 background-size: cover;      
+}
+</style> >
 

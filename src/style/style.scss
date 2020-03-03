@@ -11,6 +11,11 @@ input {
     }
 }
 
+// 文字强制换行
+.word-break {
+    word-wrap: break-word;
+}
+
 // 文字溢出处理
 .text-hidden {
     overflow: hidden;
@@ -21,6 +26,16 @@ input {
 // UI层级权限设置
 .zIndex-9 {
     z-index: 9;
+}
+
+// 过渡两秒
+.transition {
+    transition: .2s all;
+}
+
+// 无法选择字体
+.noselect {
+    user-select: none;
 }
 
 // 打开面板特效

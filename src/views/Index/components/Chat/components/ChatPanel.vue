@@ -8,7 +8,7 @@
             </div>
             <div class="w-full text-center noselect">Online Chat</div>
         </div>
-        <div class="h-320 o-y-scroll p-h-15" ref="chat">
+        <div class="h-320 o-y-scroll p-h-15 scroll-css" ref="chat">
             <div class="m-v-20" v-for="(item, index) in chatList" :key="index">
                 <div class="w-30 h-30 b-round d-inline-block bg-black text-white shadow-grey text-center lh-30 v-a-top m-h-5 cursor-pointer" 
                     :class="{'pull-right': item.type, 'bg-grey': item.type, 'text-content': item.type}">
@@ -25,7 +25,8 @@
                    @keyup.enter="ChatSubmit()"
                    placeholder="说点儿什么"
                    v-model="chatMsg"/>
-            <div class="w-40 h-40 b-round cursor-pointer shadow-grey flex j-center a-center bg-white">
+            <div class="w-40 h-40 b-round cursor-pointer shadow-grey flex j-center a-center bg-white"
+                 @click="ChatSubmit()">
                 <Icon type="ios-send" class="fs-25 text-title" />
             </div>
         </div>

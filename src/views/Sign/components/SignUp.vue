@@ -20,7 +20,7 @@
             <div class="flex j-between a-center">
                 <Input placeholder="请输入验证码" 
                        class=" w-150"/> 
-                <Button type="primary" ghost class='p-h-20 m-h-15'>发送验证码</Button>
+                <Button type="primary" ghost class='p-h-20 m-h-15' @click=sendCode()>{{code}}</Button>
             </div>
         </FormItem>
         <FormItem>
@@ -39,10 +39,12 @@
 export default {
     data() {
         return {
+            code: '发送验证码',
+            isChange: true,
             form: {
                 number: '',
                 phonenumber: '',
-                proof: ''
+                proof: '',              
             },
             rules: {
                 number: [
@@ -63,6 +65,26 @@ export default {
     methods: {
         handleStatus(val) {
             this.$emit('handleStatus', val)
+        },
+        sendCode() {
+            if (this.isChange){
+                this.isChange = false;
+                let time = 60;
+                let obj = this ;
+                let a =setInterval(() =>{
+                    if (time == 0){
+                        obj.isChange = true;
+                        obj.code = '发送验证码';
+                        clearInterval(a)
+                    }else{
+                        time--;
+                        obj.code = `${time}秒`;
+                    }
+                },1000)
+            }else{
+                console.log('无法点击');
+                
+            }
         }
     }
 }

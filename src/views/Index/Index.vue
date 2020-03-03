@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full h-main" @click="ifShowSearch">
+	<div class="w-full">
 		<Header ref="header" />
 		<div class="min-w-1200 h-full flex j-between">
 			index

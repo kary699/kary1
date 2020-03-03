@@ -4,9 +4,9 @@
             <router-link to="/">Andocs</router-link>
         </h2>
         <div class="w-250 w-full h-full flex j-started a-center relative">
-            <div class="m-l-50 h-50 w-50 flex j-center a-center">
-                <Icon type="ios-leaf-outline" class="fs-22 cursor-pointer" />
-                <span class="v-a-middle fs-13">27.0</span>
+            <div class="m-l-50 h-50 w-50 flex j-center a-center cursor-pointer">
+                <Icon type="ios-leaf-outline" class="fs-20" />
+                <span class="fs-13 m-l-5 m-t-3">27.0</span>
             </div>
             <div class="m-h-20 h-50 w-50 flex j-center a-center relative"
                     @mouseover="$refs.notice.ifShow = true"

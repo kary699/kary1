@@ -1,0 +1,31 @@
+body::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+body::-webkit-scrollbar-button {
+    height: 5px;
+    background: white;
+}
+/*滚动条 satrt*/
+ .scroll-css::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+}
+/*滑块*/
+.scroll-css::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    // background: #e2e2e2;
+    background: #515a6e;
+}
+/*轨道*/
+.scroll-css::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .3);
+}
+/*按钮*/
+.scroll-css::-webkit-scrollbar-button {
+    height: 0px;
+    background: white;
+}
+ /*滚动条 end*/

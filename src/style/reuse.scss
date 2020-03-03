@@ -23,10 +23,8 @@
 .header-panel-show {
     transform: scale(1);
 }
-//遮罩
-.bg-black{
-    background-color:rgba(0,0,0,.6);
-}
-.bg-none{
-    background-color:none;
+
+// 去除100% - 50px后高度
+.h-main {
+    height: calc(100% - 50px);
 }

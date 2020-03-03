@@ -23,7 +23,7 @@
             <Button type="primary" 
                     class="w-full bg-main text-main-yellow" 
                     size="large" 
-                    @click="handleStatus(1)">Submit</Button>
+                    @click="handleStatus(1)">Change</Button>
         </FormItem>
         <div class="flex j-between">
             <span></span>
@@ -55,8 +55,8 @@ export default {
     },
     methods: {
         handleStatus(val) {
-            this.$emit('handleStatus', val)
-        }
+            this.$emit('handleStatus', val) 
+        }  // 第一个参数是父组件中监听的方法 第二个参数为要传的值
     }
 }
 </script>

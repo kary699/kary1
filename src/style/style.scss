@@ -38,7 +38,24 @@ input {
     user-select: none;
 }
 
-// 打开面板特效
+// 默认阴影
+.shadow-grey {
+    box-shadow: 0 0 8px #ccc;
+}
+.shadow-grey-inset {
+    box-shadow: 0 0 8px #ccc inset;
+}
+
+// hover阴影
+.shadow-hover {
+    transition: .3s all;
+    &:hover {
+        transform: translateY(-5%);
+        box-shadow: 0 0 40px #ccc;
+    }
+}
+
+// 打开面板特效-左右抖动
 .open-panel {
     transform-origin: right center;
     animation: moveX .7s;
@@ -52,5 +69,21 @@ input {
     }
     100% {
         transform: translateX(0);
+    }
+}
+
+// 打开面板特效-上下抖动
+.open-pull {
+    animation: moveY .7s;
+}
+@keyframes moveY {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(0);
     }
 }

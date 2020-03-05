@@ -7,14 +7,6 @@
 }
 
 // header 部分
-// header盒子阴影
-.shadow-grey {
-    box-shadow: 0 0 8px #ccc;
-}
-.shadow-grey-inset {
-    box-shadow: 0 0 8px #ccc inset;
-}
-
 .header-panel-css {
     transition: .2s all;
     transform: scale(0);
@@ -27,4 +19,9 @@
 // 去除100% - 50px后高度
 .h-main {
     height: calc(100% - 50px);
+}
+
+// 遮罩背景
+.bg-black-opacity {
+    background: rgba(55, 55, 55, 0.6);
 }

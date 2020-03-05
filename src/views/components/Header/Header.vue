@@ -1,5 +1,5 @@
 <template>
-    <div class="relative top-0 left-0 bg-white shadow-grey min-w-1200 h-50 flex j-between a-center">
+    <div class="relative top-0 left-0 bg-white shadow-grey min-w-1200 h-50 flex j-between a-center zIndex-9">
         <h2 class="m-l-50">
             <router-link to="/">Andocs</router-link>
         </h2>

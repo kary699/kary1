@@ -1,5 +1,5 @@
 <template>
-    <div class="absolute top-30 w-100 user-css header-panel-css shadow-grey bg-white b-r-5 m-t-20 text-center fs-12 text-grey p-h-10 zIndex-9" :class="{'header-panel-show': ifShow}">
+    <div class="absolute top-30 w-100 user-css header-panel-css shadow-grey bg-white b-r-5 m-t-20 text-center fs-12 text-grey p-h-10 zIndex-10" :class="{'header-panel-show': ifShow}">
         <div class="cursor-pointer p-10 b-b">{{name}}</div>
         <div class="cursor-pointer p-10 b-b">组织管理</div>
         <router-link to="/check" class="d-block cursor-pointer p-10 b-b">

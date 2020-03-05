@@ -24,7 +24,6 @@ export default {
     methods: {
         isShow(){
             this.$refs.write.showWrite()
-
         }
     }
     

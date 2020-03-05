@@ -1,5 +1,5 @@
 const Index = () => import('@/views/Index/Index.vue')
-const Work = () => import('@/views/Work/Work.vue')
+const Check = () => import('@/views/Check/Check.vue')
 export default [
     {
         path: '/index',
@@ -7,8 +7,8 @@ export default [
         component: Index
     },
     {
-        path: '/work',
-        name: 'work',
-        component: Work
+        path: '/check',
+        name: 'check',
+        component: Check
     },
 ]

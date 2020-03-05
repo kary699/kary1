@@ -52,6 +52,8 @@ export default {
     },
     methods: {
         handleStatus(val) {
+            this.form.username = ''
+            this.form.password = ''
             this.$emit('handleStatus', val)
         },
         async submit() {

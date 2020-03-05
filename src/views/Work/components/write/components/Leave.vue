@@ -63,6 +63,9 @@ export default {
         },
         handleReset (name) {
             this.$refs[name].resetFields();
+        },
+        isShowleave () {
+            this.isShow = !this.isShow
         }
     }
 }

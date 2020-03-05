@@ -38,9 +38,9 @@ export default {
     }
   },
   methods: {
-    showWrite() {
-      this.status = !this.status;
-    },
+    // showWrite() {
+    //   this.status = !this.status;
+    // },
     showLeave(){
       if(this.items.value="请假"){
         this.$refs.leave.isShowleave

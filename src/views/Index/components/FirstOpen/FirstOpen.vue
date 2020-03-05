@@ -91,9 +91,3 @@ export default {
     }
 }
 </script>
-
-<style lang="scss" scoped>
-.bg-black-opacity {
-    background: rgba(55, 55, 55, 0.6);
-}
-</style>

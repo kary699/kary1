@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Header from './components/Header/Header'
+import Header from '../components/Header/Header'
 import Chat from './components/Chat/Chat'
 import FirstOpen from './components/FirstOpen/FirstOpen'
 export default {

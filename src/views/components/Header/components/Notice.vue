@@ -1,5 +1,5 @@
 <template>
-    <div class="absolute top-30 w-300 notice-css header-panel-css shadow-grey b-r-5 m-t-20 zIndex-9" :class="{'header-panel-show': ifShow}">
+    <div class="absolute top-30 w-300 notice-css header-panel-css shadow-grey b-r-5 m-t-20 zIndex-10" :class="{'header-panel-show': ifShow}">
         <div class="h-30 bg-white fs-13 bold p-h-15 p-v-5 text-title">
             全部通知
         </div>

@@ -11,7 +11,7 @@
 <script>
 import Header from '../components/Header/Header'
 import LSideBar from './components/LSideBar'
-import RSideBar from './components/RSideBar'
+import RSideBar from './components/RSideBar/RSideBar'
 export default {
     components: {
         Header,

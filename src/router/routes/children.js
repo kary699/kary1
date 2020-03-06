@@ -1,6 +1,7 @@
 const Index = () => import('@/views/Index/Index.vue')
 const Check = () => import('@/views/Check/Check.vue')
 const File = () => import('@/views/File/File.vue')
+const Docs = () => import('@/views/Docs/Docs.vue')
 
 export default [
     {
@@ -17,5 +18,10 @@ export default [
         path: '/file',
         name: 'file',
         component: File
+    },
+    {
+        path: '/docs',
+        name: 'docs',
+        component: Docs
     },
 ]

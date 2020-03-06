@@ -20,7 +20,7 @@
                     <a class="cursor-pointer flex j-started a-center b-b p-h-20 p-v-10"
                         v-for="(item, index) in searchData" :key="index"
                         :href="item.link" >
-                        <img class="w-50 h-50" src="@/assets/file.png">
+                        <img class="w-50 h-50" src="@/assets/docs.png">
                         <div class="m-l-15">
                             <h3 class="text-content m-b-8 text-hidden w-250">{{item.title}}</h3>
                             <span>{{item.time}}</span>

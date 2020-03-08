@@ -58,7 +58,6 @@ export default {
     }
 }
 </script>
-
 <style lang="scss" scoped>
 .bg-pull-bottom {
     background: url(../../../assets/pull-bottom.png) no-repeat;

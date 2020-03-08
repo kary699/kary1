@@ -5,7 +5,7 @@
              :class="{'active': curIndex === index}"
              @click="handleItemStyle(index)">
             <Icon :type="item.status != 1 ? 'ios-bookmark' : 'ios-bookmark-outline'" 
-                  class="fs-25 absolute right-40 top-2-2" />
+                  class="fs-25 absolute right-40 top-2-2"/>
             <div>
                 <p class="bold fs-15 d-inline-block">
                     {{item.typeName}}
@@ -65,8 +65,7 @@ export default {
         }
     }
 }
-</script>script>
-
+</script>
 <style lang="scss" scoped>
 .top-2-2 {
     top: -2px;

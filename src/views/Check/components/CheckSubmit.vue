@@ -30,11 +30,10 @@
             <div class="absolute close-position w-40 h-40 b-round shadow-grey shadow-hover flex j-center a-center bg-white cursor-pointer"
                  @click="handleCloseSubmit()">
                     <Icon type="ios-close" class="fs-30 bold text-title" />
-                </div> 
+            </div> 
         </Form>
     </div>
 </template>
-
 <script>
 export default {
     data() {

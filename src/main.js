@@ -5,6 +5,7 @@ import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
 import './style/index.scss'
 
+// 引入iview
 Vue.use(ViewUI);
 
 Vue.config.productionTip = false

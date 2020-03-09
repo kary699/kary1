@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-full bg-grey">
+    <div class="w-full h-full">
         <Header/>
         <Headspace/>
         <ProContent/>
@@ -8,7 +8,7 @@
 <script>
 import Header from '../components/Header/Header'
 import Headspace from './components/Headspace'
-import ProContent from './components/contents/ProContent'
+import ProContent from './components/ProContent'
 export default {
      components: {
          Header,

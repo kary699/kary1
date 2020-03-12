@@ -1,5 +1,6 @@
 <template>
-    <div class=" w-full hight flex j-start min-w-1200 m-t-20 flex-wrap">
+    <div class=" w-full hight flex j-start min-w-1200 max-w-1200 m-t-20 o-x-scroll scroll-css">
+        <Addperson ref="addperson" />
         <div class="w-300 h-full  b-white border b-r-8 m-l-40 flex-column o-y-scroll scroll-css bg-grey"
          v-for="(item, itemindex) in moduleList" :key="itemindex">
            <div  class="flex j-between ">
@@ -12,10 +13,10 @@
                <div class="m-t-20 m-r-10">
                   <Icon type="ios-add" class="fs-30 cursor-pointer" @click="addPerson()" />
                   <Icon type="ios-code-working" class="fs-30 cursor-pointer"/>
-                  <Addperson ref="addperson" />
+                  <Addperson ref="addperson" @handleSendData="sendData" />
                </div>
            </div>
-           <div class="bg-white h-100 w-260 m-l-6 b-r-8 shadow-hover m-t-10" v-for="(list, index) in personList" :key="index">
+           <div class="bg-white h-100 w-260 m-l-6 b-r-8 shadow-hover m-t-10" v-for="(list, index) in personList" :key="index" ref="add">
               <p class="h-30 w-100 b-r-20 p-t-4 text-white text-center fs-15" :class="[index == 0 ? 'bg-blue ': (index == 1 ? 'bg-green' :'bg-yellow')]">
                   {{list.proLeader}}
               </p>
@@ -27,7 +28,7 @@
            <div class="flex a-center j-center h-40 m-t-10 b-r-8 w-260 m-l-6 hover-white">
               <Icon type="ios-add" class="fs-30 cursor-pointer" @click="addModule()" />
          </div>
-     </div>
+     </div>  
 </div>
 </template>
 <script>
@@ -70,12 +71,16 @@ export default {
         },
         addPerson() {
             this.$refs.addperson.isShow = !this.isShow
+        },
+        sendData() {
+            let { search, asign } = params
             this.personList.push({
-                  ProLeader: '33',
-                  ProPartner: '44' ,
-                  ProTime: '周三',                
+                proPartner: search,
+                proTime: newData(),
             })
-        }
+
+        },
+       
     }
 }
 </script>

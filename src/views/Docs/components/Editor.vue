@@ -6,6 +6,7 @@
                 <div class="absolute bottom-0 left-0 p-h-50">
                     <input type="text" 
                            placeholder="未命名"
+                           v-model="$store.state.fileName"
                            class="h-50 w-600 d-block m-b-5 bold fs-30 b-none p-h-20">
                     <div class="w-full h-3 bg-grey"></div>
                 </div>
@@ -20,22 +21,35 @@ import Quill from "quill"; //调用编辑器
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
 import 'quill/dist/quill.bubble.css';
+
+//quill编辑器的字体
+var fonts = ['Microsoft-YaHei','SimSun', 'SimHei','KaiTi','FangSong','Arial','Times-New-Roman','sans-serif']
+var Font = Quill.import('formats/font')
+Font.whitelist = fonts//将字体加入到白名单 
+Quill.register(Font, true)
 export default {
     data() {
         return {
-            content: `<p></p><p><br></p><ol><li><strong><em>Or drag/paste an image here.</em></strong></li><li><strong><em>rerew</em></strong></li><li><strong><em>rtrete</em></strong></li><li><strong><em>tytrytr</em></strong></li><li><strong><em>uytu</em></strong></li></ol>`,
-            editorOption: {}
+            editorOption:{
+                theme:'snow'
+            }
         }
+    },
+    methods: {
+        
     },
     mounted() {
         var toolbarOptions = [
-            [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-            [{ 'font': [] }],
+            [{ 'header': [1, 2, 3, false] }],
+            // [{ 'size': ['12px', '14px', false ,'18px', '22px', '26px', '30px', '36px', '42px'] }],
+            [{ 'font': fonts }],
             ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-            [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            [{ 'color': [] }, 
+            { 'background': [] }],          // dropdown with defaults from theme
+            [{ 'list': 'ordered'}, 
+            { 'list': 'bullet' }],
             [{ 'align': [] }],
-            [{ 'image': 'image' }],
+            ['link', 'image'],
             // ['blockquote', 'code-block'],
             // [{ 'header': 1 }, { 'header': 2 }],               // custom button values
             // [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
@@ -87,6 +101,7 @@ export default {
 }
 .ql-editor {
     padding: 0 70px;
+    height: 1000px;
 }
 .editor-title {
     top: 40px;

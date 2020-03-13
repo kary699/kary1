@@ -7,13 +7,16 @@
                 </div>
             </Tooltip>
             <Tooltip content="重命名" placement="bottom">
-                <input type="text" 
+                <input type="text"
+                       v-model="$store.state.fileName" 
                        class="w-100 bold text-center text-title h-25 m-l-20 b-none b-b text-hidden"
                        placeholder="未命名">
             </Tooltip>
             <Tooltip content="收藏" placement="bottom">
                 <div class="flex j-center a-center cursor-pointer m-l-10">
-                    <Icon type="ios-bookmark-outline" class="fs-18 m-t-5" />
+                    <Icon :type="ifMark ? 'ios-bookmark' : 'ios-bookmark-outline'"
+                          class="fs-18 m-t-5"
+                          @click="ifMark = !ifMark" />
                 </div>
             </Tooltip>
             <span class="fs-12 text-grey m-l-10">文档将自动保存</span>
@@ -35,7 +38,7 @@
             </div>
             <Tooltip content="版本/讨论" placement="bottom">
                 <div class="flex j-center a-center cursor-pointer m-l-5 m-t-5">
-                    <Icon type="ios-timer-outline" class="fs-23 text-title" />
+                    <Icon type="ios-timer-outline" class="fs-22 text-title" />
                 </div>
             </Tooltip>
             <Tooltip content="全屏" placement="bottom">
@@ -56,6 +59,11 @@
 <script>
 import screenfull from 'screenfull'
 export default {
+    data() {
+        return {
+            ifMark: false
+        }
+    },
     methods: {
 		fullscreen() {
 			// 全屏切换

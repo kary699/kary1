@@ -9,11 +9,11 @@
                    v-model="searchValue"
                    placeholder="输入文件名进行搜索"
                    class="w-300 fs-13 b-none">
-            <div class="w-50 h-50 flex j-center a-center" v-show="ifOpenSearch">
+            <div class="w-50 h-50 flex j-center a-center" v-show="$store.state.ifOpenSearch">
                 <Icon type="md-close-circle" class="m-h-10 fs-15 cursor-pointer"  @click="clearSearch()" />
             </div>
         </div>
-        <div class="b-t b-grey max-h-500 bg-white o-y-scroll scroll-css" v-show="ifOpenSearch">
+        <div class="b-t b-grey max-h-500 bg-white o-y-scroll scroll-css" v-show="$store.state.ifOpenSearch">
             <div class="m-t-8" v-if="searchData.length">
                 <div class="m-l-20 fs-12 text-grey">相关词匹配</div>
                 <div class="fs-12 text-grey p-20 p-t-10">
@@ -40,7 +40,6 @@ export default {
     data() {
         return {
             ifShow: false,
-            ifOpenSearch: false,
             searchValue: '',
             searchData: [
                 {

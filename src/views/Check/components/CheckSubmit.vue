@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed top-0 left-0 w-full h-full flex j-center a-center bg-black-opacity zIndex-9" v-show="ifShow">
+    <div class="fixed top-0 left-0 w-full h-full flex j-center a-center bg-black-opacity zIndex-10" v-show="ifShow">
         <Form ref="form" :model="form" :rules="rules" class="max-w-500 min-w-500 h-500 p-50 b-r-8 shadow-grey bg-grey relative">
             <h2 class="text-center m-b-15">填写审批信息</h2>
             <FormItem prop="checkType" class="m-0">

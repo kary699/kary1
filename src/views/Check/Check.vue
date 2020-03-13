@@ -1,24 +1,19 @@
 <template>
-    <div class="w-full h-full">
-        <Header />
-        <div class="min-w-1200 h-main flex j-between a-center">
-            <CheckSubmit ref="checkSubmit" 
-                         @handleCloseSubmit="closeSubmit()"
-                         @handleSendData="sendData" />
-            <CheckInfo ref="checkInfo" @handleOpenSubmit="openSubmit()" />
-            <CheckList ref="checkList" @handleSyncData="syncData" />
-        </div>
-    </div>  
+    <div class="min-w-1200 w-full h-full flex j-between a-center">
+        <CheckSubmit ref="checkSubmit" 
+                        @handleCloseSubmit="closeSubmit()"
+                        @handleSendData="sendData" />
+        <CheckInfo ref="checkInfo" @handleOpenSubmit="openSubmit()" />
+        <CheckList ref="checkList" @handleSyncData="syncData" />
+    </div> 
 </template>
 
 <script>
-import Header from '../components/Header/Header'
 import CheckSubmit from './components/CheckSubmit'
 import CheckInfo from './components/CheckInfo'
 import CheckList from './components/CheckList'
 export default {
     components: {
-        Header,
         CheckSubmit,
         CheckInfo,
         CheckList

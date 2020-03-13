@@ -1,8 +1,8 @@
 <template>
-  	<div class="w-full h-full">
+	<div class="w-full h-full">
 		<Header />
 		<Editor />
-	  </div>
+	</div>
 </template>
 
 <script>

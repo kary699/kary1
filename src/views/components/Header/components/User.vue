@@ -6,7 +6,6 @@
             审批/请假
         </router-link>
         <div class="cursor-pointer p-10 b-b">考核测试</div>
-        <div class="cursor-pointer p-10 b-b">项目空间</div>
         <router-link to="/sign" class="d-block cursor-pointer p-10">
             <span class="text-red">退出账号</span>
         </router-link>

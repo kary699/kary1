@@ -1,14 +1,15 @@
 <template>
-    <div class="relative top-0 left-0 bg-white shadow-grey min-w-1200 h-50 flex j-between a-center zIndex-10">
+    <div class="relative top-0 left-0 bg-white shadow-grey min-w-1200 h-50 flex j-between a-center zIndex-10"
+         v-if="$route.name != 'docs'">
         <h2 class="m-l-50">
             <router-link to="/">Andocs</router-link>
         </h2>
         <div class="w-250 w-full h-full flex j-started a-center relative"
-             :class="{'w-500': $route.name == 'file'}">
+             :class="{'w-500': $route.name == '/file'}">
             <div class="w-200 border h-30 b-r-5 m-l-30 flex a-center cursor-text input-css" 
                     @click="handleSearch"
                     ref="searchWrapper"
-                    v-if="$route.name == 'file'">
+                    v-if="$route.name == '/file'">
                 <Icon type="ios-search-outline" class="m-l-10 fs-20 cursor-pointer" />
                 <span class="m-l-8">搜索文档</span>
                 <Search ref="search" />
